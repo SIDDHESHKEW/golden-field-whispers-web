@@ -1,12 +1,38 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from 'react';
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import Story from '@/components/Story';
+import Harvest from '@/components/Harvest';
+import Visit from '@/components/Visit';
+import Journal from '@/components/Journal';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
+import ScrollAnimation from '@/components/ScrollAnimation';
 
 const Index = () => {
+  useEffect(() => {
+    // Update document title
+    document.title = "Earthen Harvest - Sustainable Farming";
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="bg-cream">
+      {/* Grain overlay for texture */}
+      <div className="grain-overlay"></div>
+      
+      {/* Main content */}
+      <Navbar />
+      <Hero />
+      <Story />
+      <Harvest />
+      <Visit />
+      <Journal />
+      <Contact />
+      <Footer />
+      
+      {/* Initialize scroll animations */}
+      <ScrollAnimation />
     </div>
   );
 };
